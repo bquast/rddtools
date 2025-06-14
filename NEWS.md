@@ -1,3 +1,8 @@
+rddtools 2.0.1
+=====================
+* Fix minor R CRAN issues
+* Update documentation
+
 rddtools 1.8.0
 =====================
 * redo documentation
