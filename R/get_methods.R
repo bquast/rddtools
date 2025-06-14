@@ -56,11 +56,13 @@ infType <- function(x) {
         "se" else getCall(x)$inference
 }
 
-
+#' @noRd
 hasCovar <- function(object) UseMethod("hasCovar")
 
+#' @noRd
 hasCovar.rdd_data <- function(object) attr(object, "hasCovar")
 
+#' @noRd
 hasCovar.rdd_reg <- function(object) {
     call <- getCall(object)
     !is.null(call$covariates)
@@ -89,7 +91,11 @@ getCovarNames <- function(object) {
     colnames(object)[-rem]
 }
 
-getOriginalX <- function(object) {
+#' @noRd
+getOriginalX <- function(object) UseMethod("getOriginalX")
+
+#' @noRd
+getOriginalX.default <- function(object) {
     
     cutpoint <- getCutpoint(object)
     x <- object$model[, "x"]
@@ -98,13 +104,13 @@ getOriginalX <- function(object) {
     x
 }
 
-getOriginalX <- function(object) UseMethod("getOriginalX")
 
-
+#' @noRd
 getOriginalX.rdd_reg <- function(object) {
     object$RDDslot$rdd_data[, "x"]
 }
 
+#' @noRd
 getOriginalX.rdd_data <- function(object) {
     object[, "x"]
 }
@@ -112,7 +118,7 @@ getOriginalX.rdd_data <- function(object) {
 # getOriginalX.rdd_reg_np <- function(object){ cutpoint <- getCutpoint(object) Xnam <- getXname(object) x <-
 # object$model[,Xnam] if(cutpoint!=0) x <- x+cutpoint x }
 
-
+#' @noRd
 getOriginalData <- function(object, na.rm = TRUE, classRDD = TRUE) UseMethod("getOriginalData")
 
 # getOriginalData.rdd_reg_np <- function(object, na.rm=TRUE){ cutpoint <- getCutpoint(object) Xnam <- getXname(object) dat <-
@@ -120,7 +126,7 @@ getOriginalData <- function(object, na.rm = TRUE, classRDD = TRUE) UseMethod("ge
 # function(x) all(!is.na(x))),] # remove na rows dat }
 
 
-
+#' @noRd
 getOriginalData.rdd_reg <- function(object, na.rm = TRUE, classRDD = TRUE) {
     res <- object$RDDslot$rdd_data
     if (na.rm) 
@@ -130,6 +136,7 @@ getOriginalData.rdd_reg <- function(object, na.rm = TRUE, classRDD = TRUE) {
     res
 }
 
+#' @noRd
 getOriginalData.rdd_data <- function(object, na.rm = TRUE, classRDD = TRUE) {
   res <- object
   if (na.rm) 

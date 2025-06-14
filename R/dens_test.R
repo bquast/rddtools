@@ -3,8 +3,8 @@
 #' Calls the \code{\link[rdd]{DCdensity}} test from package \code{rdd} on a \code{rdd_object}.
 #' 
 #' @param rdd_object object of class rdd_data
-#' @param bin Argument of the \code{\link{DCdensity}} function, the binwidth
-#' @param bw Argument of the \code{\link{DCdensity}} function, the bandwidth
+#' @param bin Argument of the \code{\link[rdd]{DCdensity}} function, the binwidth
+#' @param bw Argument of the \code{\link[rdd]{DCdensity}} function, the bandwidth
 #' @param plot Whether to return a plot. Logical, default ot TRUE. 
 #' @param \ldots Further arguments passed to \code{\link[rdd]{DCdensity}}. 
 #' @export

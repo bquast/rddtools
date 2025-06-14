@@ -2,6 +2,7 @@
 % Please edit documentation in R/rddtools.R
 \docType{package}
 \name{rddtools}
+\alias{-package}
 \alias{rddtools}
 \title{Regression Discontinuity Design}
 \description{

@@ -12,7 +12,7 @@ as.npreg(x, ...)
 \arguments{
 \item{x}{Object of class \code{rdd_reg} created by \code{\link{rdd_reg_np}} or \code{\link{rdd_reg_lm}}}
 
-\item{\ldots}{Further arguments passed to the \code{\link{npregbw}} or \code{\link{npreg}}}
+\item{\ldots}{Further arguments passed to the \code{\link[np]{npregbw}} or \code{\link[np]{npreg}}}
 }
 \value{
 An object of class \code{npreg} or \code{npregbw}

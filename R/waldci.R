@@ -9,10 +9,12 @@
 #' @param \ldots Further arguments
 
 
+#' @export
 waldci <- function(x, parm = NULL, level = 0.95, vcov. = NULL, df = NULL, ...) {
     UseMethod("waldci")
 }
 
+#' @export
 waldci.default <- function(x, parm = NULL, level = 0.95, vcov. = NULL, df = NULL, ...) {
     ## use S4 methods if loaded
     coef0 <- if ("stats4" %in% loadedNamespaces()) 
@@ -67,9 +69,10 @@ waldci.default <- function(x, parm = NULL, level = 0.95, vcov. = NULL, df = NULL
 
 
 ## copy of stats:::format.perc
-format.perc <- function(probs, digits) paste(format(100 * probs, trim = TRUE, scientific = FALSE, digits = digits), "%")
+format_perc <- function(probs, digits) paste(format(100 * probs, trim = TRUE, scientific = FALSE, digits = digits), "%")
 
-waldci.rdd_reg_np <- function(x, level = 0.95, vcov. = NULL, df = Inf, ...) {
+#' @export
+waldci.rdd_reg_np <- function(x, parm=NULL, level = 0.95, vcov. = NULL, df = Inf,  ...) {
     
     inf_met <- infType(x)  ## def in Misc.R
     if (inf_met == "se") {
@@ -81,7 +84,7 @@ waldci.rdd_reg_np <- function(x, level = 0.95, vcov. = NULL, df = Inf, ...) {
         a <- (1 - level)/2
         a <- c(a, 1 - a)
         fac <- qnorm(a)
-        pct <- format.perc(a, 3)  ## import!!
+        pct <- format_perc(a, 3)  ## import!!
         ci <- array(NA, dim = c(1, 2L), dimnames = list("D", pct))
         ci[] <- co[, "Estimate"] + co[, "Std. Error"] %o% fac
         return(ci)
@@ -92,10 +95,11 @@ waldci.rdd_reg_np <- function(x, level = 0.95, vcov. = NULL, df = Inf, ...) {
 
 
 
-
+#' @export
 waldci.glm <- function(x, parm = NULL, level = 0.95, vcov. = NULL, df = Inf, ...) waldci.default(x, parm = parm, level = level, 
     vcov. = vcov., df = df, ...)
 
+#' @export
 waldci.mlm <- function(x, parm = NULL, level = 0.95, vcov. = NULL, df = NULL, ...) {
     ## obtain vcov
     v <- if (is.null(vcov.)) 
@@ -109,6 +113,7 @@ waldci.mlm <- function(x, parm = NULL, level = 0.95, vcov. = NULL, df = NULL, ..
     waldci.default(x, parm = parm, level = level, vcov. = v, df = df, ...)
 }
 
+#' @export
 waldci.survreg <- function(x, parm = NULL, level = 0.95, vcov. = NULL, df = Inf, ...) {
     if (is.null(vcov.)) 
         v <- vcov(x) else {

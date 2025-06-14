@@ -139,8 +139,11 @@ vcovCluster2 <- function(object, clusterVar1, clusterVar2) {
     vcovMCL
 }
 
+#' @noRd
 getModelRank <- function(object, ...) UseMethod("getModelRank")
 
+#' @noRd
 getModelRank.default <- function(object, ...) object$rank
 
+#' @noRd
 getModelRank.rdd_reg_np <- function(object, ...) getModelRank.default(object$RDDslot$model) 

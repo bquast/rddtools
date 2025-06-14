@@ -9,9 +9,9 @@ dens_test(rdd_object, bin = NULL, bw = NULL, plot = TRUE, ...)
 \arguments{
 \item{rdd_object}{object of class rdd_data}
 
-\item{bin}{Argument of the \code{\link{DCdensity}} function, the binwidth}
+\item{bin}{Argument of the \code{\link[rdd]{DCdensity}} function, the binwidth}
 
-\item{bw}{Argument of the \code{\link{DCdensity}} function, the bandwidth}
+\item{bw}{Argument of the \code{\link[rdd]{DCdensity}} function, the bandwidth}
 
 \item{plot}{Whether to return a plot. Logical, default ot TRUE.}
 

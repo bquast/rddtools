@@ -2,7 +2,7 @@
 #' 
 #' Convert an rdd_object to a non-parametric regression \code{npreg} from package \code{np}
 #' @param x Object of class \code{rdd_reg} created by \code{\link{rdd_reg_np}} or \code{\link{rdd_reg_lm}}
-#' @param \ldots Further arguments passed to the \code{\link{npregbw}} or \code{\link{npreg}}
+#' @param \ldots Further arguments passed to the \code{\link[np]{npregbw}} or \code{\link[np]{npreg}}
 #' @details This function converts an rdd_reg object into an \code{npreg} object from package \code{np}
 #' Note that the output won't be the same, since \code{npreg} does not offer a triangular kernel, but a Gaussian or Epanechinkov one. 
 #' Another reason why estimates might differ slightly is that \code{npreg} implements a multivariate kernel, while rdd_reg 
