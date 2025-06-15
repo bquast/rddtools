@@ -8,7 +8,6 @@ Authors@R: c(
             email="Matthieu.Stigler@gmail.com"),
     person("Bastiaan", "Quast", email = "bquast@gmail.com", role=c("aut", "cre"), comment=c(ORCID="0000-0002-2951-3577") )
     )
-Maintainer: Bastiaan Quast <bquast@gmail.com>
 Imports:
     KernSmooth,
     ggplot2,
