@@ -8,11 +8,17 @@
 \alias{computePlacebo}
 \title{Draw a (density) plot of placebo tests}
 \usage{
-plotPlacebo(object, device = c("ggplot", "base"), ...)
+plotPlacebo(
+  object,
+  device = c("ggplot", "base"),
+  output = c("data", "ggplot"),
+  ...
+)
 
 \method{plotPlacebo}{rdd_reg}(
   object,
   device = c("ggplot", "base"),
+  output = c("data", "ggplot"),
   from = 0.25,
   to = 0.75,
   by = 0.1,
@@ -20,15 +26,20 @@ plotPlacebo(object, device = c("ggplot", "base"), ...)
   same_bw = FALSE,
   vcov. = NULL,
   plot = TRUE,
+  ...
+)
+
+plotPlaceboDens(
+  object,
+  device = c("ggplot", "base"),
   output = c("data", "ggplot"),
   ...
 )
 
-plotPlaceboDens(object, device = c("ggplot", "base"), ...)
-
 \method{plotPlaceboDens}{rdd_reg}(
   object,
   device = c("ggplot", "base"),
+  output = c("data", "ggplot"),
   from = 0.25,
   to = 0.75,
   by = 0.1,
@@ -53,6 +64,8 @@ computePlacebo(
 
 \item{device}{Whether to draw a base or a ggplot graph.}
 
+\item{output}{Whether to return (invisibly) the data frame containing the bandwidths and corresponding estimates, or the ggplot object}
+
 \item{from}{Starting point of the fake cutpoints sequence. Refers ot the quantile of each side of the true cutpoint}
 
 \item{to}{Ending   point of the fake cutpoints sequence. Refers ot the quantile of each side of the true cutpoint}
@@ -66,8 +79,6 @@ computePlacebo(
 \item{vcov.}{Specific covariance function to pass to coeftest. See help of package \code{\link[sandwich]{sandwich}}.}
 
 \item{plot}{Whether to actually plot the data.}
-
-\item{output}{Whether to return (invisibly) the data frame containing the bandwidths and corresponding estimates, or the ggplot object}
 
 \item{\ldots}{Further arguments passed to specific methods.}
 }

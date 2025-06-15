@@ -17,11 +17,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Bastiaan Quast \email{bquast@gmail.com} (\href{https://orcid.org/0000-0002-2951-3577}{ORCID})
+\strong{Maintainer}: Matthieu Stigler \email{Matthieu.Stigler@gmail.com} (\href{https://orcid.org/0000-0002-6802-4290}{ORCID})
 
 Authors:
 \itemize{
-  \item Matthieu Stigler \email{Matthieu.Stigler@gmail.com} (\href{https://orcid.org/0000-0002-6802-4290}{ORCID})
+  \item Bastiaan Quast \email{bquast@gmail.com} (\href{https://orcid.org/0000-0002-2951-3577}{ORCID})
 }
 
 }

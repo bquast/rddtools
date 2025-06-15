@@ -23,7 +23,7 @@
 
 
 #' @export
-plotPlacebo <- function(object, device = c("ggplot", "base"), ...) UseMethod("plotPlacebo")
+plotPlacebo <- function(object, device = c("ggplot", "base"), output = c("data", "ggplot"), ...) UseMethod("plotPlacebo")
 
 #' @rdname plotPlacebo
 #' @export
@@ -32,8 +32,9 @@ plotPlacebo <- function(object, device = c("ggplot", "base"), ...) UseMethod("pl
 #' @param by Increments of the from-to sequence
 #' @param level Level of the confidence interval shown
 #' @param same_bw Whether to re-estimate the bandwidth at each point
-plotPlacebo.rdd_reg <- function(object, device = c("ggplot", "base"), from = 0.25, to = 0.75, by = 0.1, level = 0.95, same_bw = FALSE, 
-    vcov. = NULL, plot = TRUE, output = c("data", "ggplot"), ...) {
+plotPlacebo.rdd_reg <- function(object, device = c("ggplot", "base"), output = c("data", "ggplot"),
+                                from = 0.25, to = 0.75, by = 0.1, level = 0.95, same_bw = FALSE, 
+                                vcov. = NULL, plot = TRUE,  ...) {
     
     device <- match.arg(device)
     output <- match.arg(output)
@@ -42,21 +43,23 @@ plotPlacebo.rdd_reg <- function(object, device = c("ggplot", "base"), from = 0.2
     seq_vals <- computePlacebo(object = object, from = from, to = to, by = by, level = level, same_bw = same_bw, vcov. = vcov.)
     
     ## Use low-level to plot:
-    plotPlacebo_low(seq_vals, device = device, plot = plot, output = output, ...)
+    gg_out <- plotPlacebo_low(seq_vals, device = device, plot = plot, output = output, ...)
     
-    invisible(seq_vals)
+    ## export (silently) results:
+    out <- switch(output, data = seq_vals, ggplot = gg_out)
+    invisible(out)
 }
 
 
 
 #' @export
-plotPlacebo.PlaceboVals <- function(object, device = c("ggplot", "base"), plot = TRUE, output = c("data", "ggplot"), ...) {
+plotPlacebo.PlaceboVals <- function(object, device = c("ggplot", "base"), output = c("data", "ggplot"), plot = TRUE, ...) {
     
     device <- match.arg(device)
     output <- match.arg(output)
-    plotPlacebo_low(object, device = device, plot = plot, output = output, ...)
+    gg_out <- plotPlacebo_low(object, device = device, plot = plot, output = output, ...)
     
-    invisible(object)
+    return(gg_out)
 }
 
 
@@ -118,11 +121,11 @@ plotPlacebo_low <- function(seq_vals, device = c("ggplot", "base"), output = c("
 
 #' @rdname plotPlacebo
 #' @export
-plotPlaceboDens <- function(object, device = c("ggplot", "base"), ...) UseMethod("plotPlaceboDens")
+plotPlaceboDens <- function(object, device = c("ggplot", "base"), output = c("data", "ggplot"), ...) UseMethod("plotPlaceboDens")
 
 #' @rdname plotPlacebo
 #' @export
-plotPlaceboDens.rdd_reg <- function(object, device = c("ggplot", "base"), from = 0.25, to = 0.75, by = 0.1, level = 0.95, same_bw = FALSE, 
+plotPlaceboDens.rdd_reg <- function(object, device = c("ggplot", "base"), output = c("data", "ggplot"), from = 0.25, to = 0.75, by = 0.1, level = 0.95, same_bw = FALSE, 
     vcov. = NULL, ...) {
     
     device <- match.arg(device)
@@ -131,9 +134,10 @@ plotPlaceboDens.rdd_reg <- function(object, device = c("ggplot", "base"), from =
     seq_vals <- computePlacebo(object = object, from = from, to = to, by = by, level = level, same_bw = same_bw, vcov. = vcov.)
     
     ## Use low-level to plot:
-    plotPlaceboDens_low(seq_vals, device = device)
+    gg_out <- plotPlaceboDens_low(seq_vals, device = device)
     
-    invisible(seq_vals)
+    out <- switch(output, data = seq_vals, ggplot = gg_out)
+    invisible(out)
 }
 
 

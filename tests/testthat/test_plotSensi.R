@@ -13,3 +13,7 @@ sensiplot <- plotSensi(reg_nonpara)
 test_that("rd: output values match", {
   expect_equal( length(sensiplot),  6 )
 })
+
+test_that("output=ggplot works", {
+  expect_s3_class(plotSensi(reg_nonpara, output = "ggplot"), class = "ggplot")
+})
