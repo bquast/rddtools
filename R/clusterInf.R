@@ -77,12 +77,12 @@ model.frame.rdd_reg_np <- function(formula, ...) model.frame(formula$RDDslot$mod
 #' @param object Object of class lm, from which rdd_reg also inherits.
 #' @param clusterVar The variable containing the cluster attributions. 
 #' @return A matrix containing the covariance matrix estimate.
-#' @author Mahmood Arai, see \url{https://www.su.se/profiles/ma-1.181536}
+#' @author Mahmood Arai,
 #' @references Cameron, C.,  Gelbach, J. and Miller, D. (2011) Robust Inference With Multiway Clustering,
 #' \emph{Journal of Business and Economic Statistics},  vol. 29(2), pages 238-249.
 #' #' @references Wooldridge (2003) Cluster-sample methods in applied econometrics. 
 #' \emph{American Economic Review}, 93, p. 133-138
-#' @references Arai, M. (2011) Cluster-robust standard errors using R, Note available \url{https://www.ne.su.se/polopoly_fs/1.216115.1426234213!/menu/standard/file/clustering1.pdf}. 
+#' @references Arai, M. (2011) Cluster-robust standard errors using R, Note available \url{https://web.archive.org/web/20230101000000/https://www.ne.su.se/polopoly_fs/1.216115.1426234213!/menu/standard/file/clustering1.pdf}. 
 #' @export
 #' @seealso \code{\link{clusterInf}} for a direct function, allowing also alternative cluster inference methods. 
 #' @examples
