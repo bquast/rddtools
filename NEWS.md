@@ -2,6 +2,7 @@ rddtools 2.0.1
 =====================
 * Fix minor R CRAN issues
 * Update documentation
+* Chainge maintainer to Matthieu
 
 rddtools 1.8.0
 =====================
