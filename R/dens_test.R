@@ -1,14 +1,17 @@
+#' McCrary Sorting Test
+#' 
 #' Run the McCracy test for manipulation of the forcing variable
 #' 
-#' Calls the \code{\link[rdd]{DCdensity}} test from package \code{rdd} on a \code{rdd_object}.
-#' 
 #' @param rdd_object object of class rdd_data
-#' @param bin Argument of the \code{\link[rdd]{DCdensity}} function, the binwidth
-#' @param bw Argument of the \code{\link[rdd]{DCdensity}} function, the bandwidth
-#' @param plot Whether to return a plot. Logical, default ot TRUE. 
-#' @param \ldots Further arguments passed to \code{\link[rdd]{DCdensity}}. 
+#' @param bin the binwidth (defaults to \code{2*sd(runvar)*length(runvar)^(-.5)})
+#' @param bw the bandwidth to use (by default uses bandwidth selection calculation from McCrary (2008))
+#' @param plot Whether to return a plot. Logical, default to TRUE. 
+#' @param \ldots Further arguments passed to the unexported \code{DCdensity} function. 
+#' @description
+#' This calls the original \code{DCdensity} function which was in the package \code{rdd} by Drew Dimmery,
+#' which has been archived and is now internally stored in the Rddtools package. 
+#' @references McCrary, Justin. (2008) "Manipulation of the running variable in the regression discontinuity design: A density test," \emph{Journal of Econometrics}. 142(2): 698-714. \url{http://dx.doi.org/10.1016/j.jeconom.2007.05.005}
 #' @export
-#' @import rdd
 #' @examples
 #' data(house)
 #' house_rdd <- rdd_data(y=house$y, x=house$x, cutpoint=0)

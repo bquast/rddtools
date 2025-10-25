@@ -2,26 +2,33 @@
 % Please edit documentation in R/dens_test.R
 \name{dens_test}
 \alias{dens_test}
-\title{Run the McCracy test for manipulation of the forcing variable}
+\title{McCrary Sorting Test}
 \usage{
 dens_test(rdd_object, bin = NULL, bw = NULL, plot = TRUE, ...)
 }
 \arguments{
 \item{rdd_object}{object of class rdd_data}
 
-\item{bin}{Argument of the \code{\link[rdd]{DCdensity}} function, the binwidth}
+\item{bin}{the binwidth (defaults to \code{2*sd(runvar)*length(runvar)^(-.5)})}
 
-\item{bw}{Argument of the \code{\link[rdd]{DCdensity}} function, the bandwidth}
+\item{bw}{the bandwidth to use (by default uses bandwidth selection calculation from McCrary (2008))}
 
-\item{plot}{Whether to return a plot. Logical, default ot TRUE.}
+\item{plot}{Whether to return a plot. Logical, default to TRUE.}
 
-\item{\ldots}{Further arguments passed to \code{\link[rdd]{DCdensity}}.}
+\item{\ldots}{Further arguments passed to the unexported \code{DCdensity} function.}
 }
 \description{
-Calls the \code{\link[rdd]{DCdensity}} test from package \code{rdd} on a \code{rdd_object}.
+This calls the original \code{DCdensity} function which was in the package \code{rdd} by Drew Dimmery,
+which has been archived and is now internally stored in the Rddtools package.
+}
+\details{
+Run the McCracy test for manipulation of the forcing variable
 }
 \examples{
 data(house)
 house_rdd <- rdd_data(y=house$y, x=house$x, cutpoint=0)
 dens_test(house_rdd)
+}
+\references{
+McCrary, Justin. (2008) "Manipulation of the running variable in the regression discontinuity design: A density test," \emph{Journal of Econometrics}. 142(2): 698-714. \url{http://dx.doi.org/10.1016/j.jeconom.2007.05.005}
 }
