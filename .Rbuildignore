@@ -7,3 +7,4 @@ misc
 ^Meta$
 ^CRAN-RELEASE$
 ^CRAN-SUBMISSION$
+^LICENSE\.md$

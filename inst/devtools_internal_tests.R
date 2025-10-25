@@ -5,7 +5,7 @@ devtools::check_win_release()
 devtools::check_win_oldrelease()
 
 devtools::build()
-
+usethis::use_gpl_license(version = 3, include_future = TRUE)
 
 ## then
 # direct: devtools::submit_cran()
