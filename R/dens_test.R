@@ -10,7 +10,7 @@
 #' @description
 #' This calls the original \code{DCdensity} function which was in the package \code{rdd} by Drew Dimmery,
 #' which has been archived and is now internally stored in the Rddtools package. 
-#' @references McCrary, Justin. (2008) "Manipulation of the running variable in the regression discontinuity design: A density test," \emph{Journal of Econometrics}. 142(2): 698-714. \url{http://dx.doi.org/10.1016/j.jeconom.2007.05.005}
+#' @references McCrary, Justin. (2008) "Manipulation of the running variable in the regression discontinuity design: A density test," \emph{Journal of Econometrics}. 142(2): 698-714. \doi{http://dx.doi.org/10.1016/j.jeconom.2007.05.005}
 #' @export
 #' @examples
 #' data(house)

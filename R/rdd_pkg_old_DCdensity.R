@@ -19,7 +19,7 @@
 #' \item{bw}{the calculated bandwidth for the test}
 #' \item{cutpoint}{the cutpoint used}
 #' \item{data}{a dataframe for the binning of the histogram. Columns are \code{cellmp} (the midpoints of each cell) and \code{cellval} (the normalized height of each cell)}
-#' @references McCrary, Justin. (2008) "Manipulation of the running variable in the regression discontinuity design: A density test," \emph{Journal of Econometrics}. 142(2): 698-714. \url{http://dx.doi.org/10.1016/j.jeconom.2007.05.005}
+#' @references McCrary, Justin. (2008) "Manipulation of the running variable in the regression discontinuity design: A density test," \emph{Journal of Econometrics}. 142(2): 698-714. \doi{http://dx.doi.org/10.1016/j.jeconom.2007.05.005}
 #' @include rdd_pkg_old_kernelwts.R
 #' @importFrom stats complete.cases sd lm coef predict pnorm
 #' @importFrom graphics lines points
