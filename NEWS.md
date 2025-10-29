@@ -1,8 +1,13 @@
+rddtools 2.0.2
+=====================
+* Directly host code of rdd::DCdensity, since rdd was archived with no apparent plans from the author to update.
+* Change license to GPL 3. 
+
 rddtools 2.0.1
 =====================
 * Fix minor R CRAN issues
 * Update documentation
-* Chainge maintainer to Matthieu
+* Change maintainer to Matthieu
 
 rddtools 1.8.0
 =====================
