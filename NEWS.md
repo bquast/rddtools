@@ -1,3 +1,7 @@
+rddtools 2.0.3
+=====================
+* Update `as.npreg()` for np 0.80-1: remove `eval` and `gradients` from `npregbw()`, and request standard errors in `npreg()` with `se = TRUE`.
+
 rddtools 2.0.2
 =====================
 * Directly host code of rdd::DCdensity, since rdd was archived with no apparent plans from the author to update.
