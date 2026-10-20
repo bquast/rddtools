@@ -65,8 +65,7 @@ as.npregbw_low <- function(x, npreg = FALSE, adjustik_bw = TRUE, ...) {
     
     
     ## start npregbw
-    res <- np::npregbw(bws = bws, formula = y ~ x + D + Dx, data = dat_np, regtype = "ll", eval = dataPoints, bandwidth.compute = FALSE, 
-        gradients = TRUE, ...)
+    res <- np::npregbw(bws = bws, formula = y ~ x + D + Dx, data = dat_np, regtype = "ll", bandwidth.compute = FALSE, ...)
     class(res) <- c("rdd_reg_npregbw", class(res))
     
     ## if npreg, return instead model_np <- npreg(bw_np, newdata=dataPoints, gradients=TRUE)
@@ -79,7 +78,7 @@ as.npregbw_low <- function(x, npreg = FALSE, adjustik_bw = TRUE, ...) {
         
         # require('np') requireNamespace('np', quietly = TRUE)
         options(np.messages = TRUE)  ## otherwise got warnings messages... probably because comes only if loaded!
-        res <- np::npreg(res, newdata = dataPoints, gradients = TRUE, ...)
+        res <- np::npreg(res, newdata = dataPoints, gradients = TRUE, se = TRUE, ...)
         class(res) <- c("rdd_reg_npreg", class(res))
     }
     
