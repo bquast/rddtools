@@ -37,11 +37,11 @@ NULL
 #' \item{x}{Vote at election t-1}
 #' \item{y}{Vote at election t}
 #' }
-#' @source Guido Imbens webpage: \url{https://scholar.harvard.edu/imbens/scholar_software/regression-discontinuity}
-#' @references Imbens, Guido and Karthik Kalyanaraman. (2012) 'Optimal Bandwidth Choice for the regression discontinuity estimator,' 
-#' Review of Economic Studies (2012) 79, 933-959
-#' @references   Lee, D. (2008) Randomized experiments from non-random selection in U.S. House elections, 
-#' \emph{Journal of Econometrics}, 142, 675-697
+#' @source Guido Imbens' former Harvard webpage, archived at \url{https://web.archive.org/web/20240811075722/https://scholar.harvard.edu/imbens/scholar_software/regression-discontinuity}
+#' @references Imbens, Guido and Karthik Kalyanaraman. (2012) 'Optimal Bandwidth Choice for the regression discontinuity estimator,'
+#' Review of Economic Studies (2012) 79, 933-959. \doi{10.1093/restud/rdr043}
+#' @references   Lee, D. (2008) Randomized experiments from non-random selection in U.S. House elections,
+#' \emph{Journal of Econometrics}, 142, 675-697. \doi{10.1016/j.jeconom.2007.05.004}
 #' @examples 
 #' data(house)
 #' rdd_house <- rdd_data(x=x, y=y, data=house, cutpoint=0)

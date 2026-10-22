@@ -12,7 +12,7 @@ A data frame with 6558 observations and two variables:
 }
 }
 \source{
-Guido Imbens webpage: \url{https://scholar.harvard.edu/imbens/scholar_software/regression-discontinuity}
+Guido Imbens' former Harvard webpage, archived at \url{https://web.archive.org/web/20240811075722/https://scholar.harvard.edu/imbens/scholar_software/regression-discontinuity}
 }
 \description{
 Randomized experiments from non-random selection in U.S. House elections
@@ -26,9 +26,9 @@ summary(rdd_house)
 plot(rdd_house)
 }
 \references{
-Imbens, Guido and Karthik Kalyanaraman. (2012) 'Optimal Bandwidth Choice for the regression discontinuity estimator,' 
-Review of Economic Studies (2012) 79, 933-959
+Imbens, Guido and Karthik Kalyanaraman. (2012) 'Optimal Bandwidth Choice for the regression discontinuity estimator,'
+Review of Economic Studies (2012) 79, 933-959. \doi{10.1093/restud/rdr043}
 
-Lee, D. (2008) Randomized experiments from non-random selection in U.S. House elections, 
-\emph{Journal of Econometrics}, 142, 675-697
+Lee, D. (2008) Randomized experiments from non-random selection in U.S. House elections,
+\emph{Journal of Econometrics}, 142, 675-697. \doi{10.1016/j.jeconom.2007.05.004}
 }
