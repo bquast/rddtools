@@ -1,6 +1,7 @@
 rddtools 2.0.3
 =====================
 * Update `as.npreg()` for np 0.80-1: remove `eval` and `gradients` from `npregbw()`, and request standard errors in `npreg()` with `se = TRUE`.
+* Minor update to documentation (roxygen 8) internal S# methods registration, and update of structure argument names. 
 
 rddtools 2.0.2
 =====================
