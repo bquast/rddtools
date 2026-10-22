@@ -11,6 +11,15 @@ S3method(covarTest_mean,rdd_data)
 S3method(covarTest_mean,rdd_reg)
 S3method(estfun,rdd_reg_np)
 S3method(getCall,rdd_reg)
+S3method(getModelRank,default)
+S3method(getModelRank,rdd_reg_np)
+S3method(getOriginalData,rdd_data)
+S3method(getOriginalData,rdd_reg)
+S3method(getOriginalX,default)
+S3method(getOriginalX,rdd_data)
+S3method(getOriginalX,rdd_reg)
+S3method(hasCovar,rdd_data)
+S3method(hasCovar,rdd_reg)
 S3method(model.frame,rdd_reg_np)
 S3method(model.matrix,rdd_data)
 S3method(plot,rdd_data)
@@ -72,17 +81,25 @@ import(np)
 import(rdrobust)
 import(sandwich)
 importFrom(AER,ivreg)
-importFrom(graphics,lines)
-importFrom(graphics,points)
-importFrom(locpol,gaussK)
-importFrom(locpol,locpol)
-importFrom(rdrobust,rdbwselect)
-importFrom(rdrobust,rdplot)
-importFrom(stats,coef)
-importFrom(stats,complete.cases)
-importFrom(stats,getCall)
-importFrom(stats,lm)
-importFrom(stats,pnorm)
-importFrom(stats,predict)
-importFrom(stats,sd)
+importFrom(graphics,
+  lines,
+  points
+)
+importFrom(locpol,
+  gaussK,
+  locpol
+)
+importFrom(rdrobust,
+  rdbwselect,
+  rdplot
+)
+importFrom(stats,
+  coef,
+  complete.cases,
+  getCall,
+  lm,
+  pnorm,
+  predict,
+  sd
+)
 importFrom(utils,head)

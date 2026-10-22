@@ -31,7 +31,6 @@ License: GPL (>= 3)
 URL: https://github.com/bquast/rddtools
 BugReports: https://github.com/bquast/rddtools/issues
 VignetteBuilder: knitr
-RoxygenNote: 7.3.3
 Encoding: UTF-8
 Collate: 
     'as.npreg.R'
@@ -62,3 +61,4 @@ Collate:
     'var_estim.R'
     'various_code.R'
     'waldci.R'
+Config/roxygen2/version: 8.1.1

@@ -59,9 +59,11 @@ infType <- function(x) {
 #' @noRd
 hasCovar <- function(object) UseMethod("hasCovar")
 
+#' @exportS3Method
 #' @noRd
 hasCovar.rdd_data <- function(object) attr(object, "hasCovar")
 
+#' @exportS3Method
 #' @noRd
 hasCovar.rdd_reg <- function(object) {
     call <- getCall(object)
@@ -94,6 +96,7 @@ getCovarNames <- function(object) {
 #' @noRd
 getOriginalX <- function(object) UseMethod("getOriginalX")
 
+#' @exportS3Method
 #' @noRd
 getOriginalX.default <- function(object) {
     
@@ -104,12 +107,13 @@ getOriginalX.default <- function(object) {
     x
 }
 
-
+#' @exportS3Method
 #' @noRd
 getOriginalX.rdd_reg <- function(object) {
     object$RDDslot$rdd_data[, "x"]
 }
 
+#' @exportS3Method
 #' @noRd
 getOriginalX.rdd_data <- function(object) {
     object[, "x"]
@@ -125,7 +129,7 @@ getOriginalData <- function(object, na.rm = TRUE, classRDD = TRUE) UseMethod("ge
 # object$model[,c('y',Xnam)] if(cutpoint!=0) dat[,Xnam] <- dat[,Xnam] +cutpoint if(na.rm) dat <- dat[apply(dat, 1,
 # function(x) all(!is.na(x))),] # remove na rows dat }
 
-
+#' @exportS3Method
 #' @noRd
 getOriginalData.rdd_reg <- function(object, na.rm = TRUE, classRDD = TRUE) {
     res <- object$RDDslot$rdd_data
@@ -136,6 +140,7 @@ getOriginalData.rdd_reg <- function(object, na.rm = TRUE, classRDD = TRUE) {
     res
 }
 
+#' @exportS3Method
 #' @noRd
 getOriginalData.rdd_data <- function(object, na.rm = TRUE, classRDD = TRUE) {
   res <- object

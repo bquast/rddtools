@@ -142,8 +142,10 @@ vcovCluster2 <- function(object, clusterVar1, clusterVar2) {
 #' @noRd
 getModelRank <- function(object, ...) UseMethod("getModelRank")
 
+#' @exportS3Method
 #' @noRd
 getModelRank.default <- function(object, ...) object$rank
 
+#' @exportS3Method
 #' @noRd
 getModelRank.rdd_reg_np <- function(object, ...) getModelRank.default(object$RDDslot$model) 
