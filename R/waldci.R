@@ -107,7 +107,7 @@ waldci.mlm <- function(x, parm = NULL, level = 0.95, vcov. = NULL, df = NULL, ..
         vcov.(x) else vcov.
     
     ## nasty hack: replace coefficients so that their names match the vcov() method
-    x$coefficients <- structure(as.vector(x$coefficients), .Names = colnames(vcov(x)))
+    x$coefficients <- structure(as.vector(x$coefficients), names = colnames(vcov(x)))
     
     ## call default method
     waldci.default(x, parm = parm, level = level, vcov. = v, df = df, ...)
